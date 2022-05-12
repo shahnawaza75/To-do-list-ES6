@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-https://github.com/shahnawaza75/To-do-list-ES6.git
+https://github.com/shahnawaza75/To-do-list-ES6/tree/list-structure
 
 ### Prerequisites
 
