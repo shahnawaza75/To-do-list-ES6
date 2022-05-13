@@ -27,14 +27,6 @@ const taskList = [
 // ### 2. DOM Manipulations
 const mainContainer = document.querySelector('.list-container');
 
-mainContainer.innerHTML = `<li class="row">
-<h1>Today's To Do</h1>
-<i class="fa-solid fa-rotate fa-lg font-awesome-icon"></i>
-</div>
-<div>
-<input placeholder="Add to your list...">
-</li>`;
-
 taskList.forEach((e) => {
   let isChecked;
   let strikeThrough;
