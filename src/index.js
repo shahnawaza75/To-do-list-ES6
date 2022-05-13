@@ -1,45 +1,43 @@
-// ### 0. Imports
+// Imports
 import './style.css';
-// ### 1. Data
-const taskList = [
-  {
-    description: 'Wash dishes',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Study ES6',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Complete to do list project',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Sport',
-    completed: true,
-    index: 3,
-  },
-];
+import addElem from './modules/add-elem.js';
+import TaskList from './modules/class-task-list.js';
+import refreshList from './modules/refresh-list.js';
 
-// ### 2. DOM Manipulations
+const taskList = new TaskList();
+
+// DOM
 const mainContainer = document.querySelector('.list-container');
 
-taskList.forEach((e) => {
-  let isChecked;
-  let strikeThrough;
-  if (e.completed === true) {
-    isChecked = 'checked';
-    strikeThrough = 'strike-through';
-  }
+// HTML skeleton
+// Header (Title and input)
 
-  mainContainer.innerHTML += `<li class="row">
-  <input class="checkbox" type="checkbox" ${isChecked}>
-  <p class="${strikeThrough}">${e.description}</p>
-  <i class="fa-solid fa-ellipsis-vertical fa-lg font-awesome-icon"></i>
-  </li>`;
-});
+const inputContainer = addElem('form', [], mainContainer);
+const inputText = addElem('input', ['input-add-task'], inputContainer);
+inputText.setAttribute('placeholder', 'Add to your list...');
+addElem('i', ['fa-solid', 'fa-arrow-right-to-bracket', 'fa-sm', 'font-awesome-icon'], inputContainer);
+// Main (list)
 
-mainContainer.innerHTML += '<button class="button">Clear all completed</button>';
+const listContainer = addElem('div', [], mainContainer);
+// Bottom (button)
+const clearBtn = addElem('button', ['button'], mainContainer);
+clearBtn.textContent = 'Clear all completed';
+
+// Input
+inputContainer.onsubmit = (e) => {
+  e.preventDefault();
+  taskList.addTask(inputText.value);
+
+  inputContainer.reset();
+  refreshList(taskList, listContainer);
+};
+
+// clear button
+clearBtn.onclick = () => {
+  // console.log('clear');
+  taskList.clearCompleted();
+  refreshList(taskList, listContainer);
+};
+
+// On load
+refreshList(taskList, listContainer);
