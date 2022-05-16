@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-https://github.com/shahnawaza75/To-do-list-ES6/tree/list-structure
+https://shahnawaza75.github.io/To-do-list-ES6/dist
 
 ### Prerequisites
 
