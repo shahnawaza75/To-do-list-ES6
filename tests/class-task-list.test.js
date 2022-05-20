@@ -23,7 +23,19 @@ describe('Testing Add Item', () => {
     const todo = new TaskList();
     todo.addTask('Sleep', false, 2);
 
-   
+    expect(todo.data[2].description).toBe('Sleep');
+  });
+  it('Adding todo to return boolean', () => {
+    const todo = new TaskList();
+    todo.addTask('Cook', true, 3);
+  });
+  it('Adding todo to return index', () => {
+    const todo = new TaskList();
+    todo.addTask('Singing', false, 4);
+
+    expect(todo.data[4].id - 1).toEqual(4);
+  });
+});
 
 // Testing Remove Item Todo
 
