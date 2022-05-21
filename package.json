@@ -22,8 +22,11 @@
   },
   "homepage": "https://Ghilain.github.io/To-Do-list/",
   "devDependencies": {
+    "@babel/core": "^7.18.0",
     "@babel/plugin-transform-modules-commonjs": "^7.17.9",
+    "@babel/preset-env": "^7.18.0",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^28.1.0",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
