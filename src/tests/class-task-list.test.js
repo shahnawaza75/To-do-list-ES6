@@ -2,9 +2,12 @@
  * @jest-environment jsdom
  */
 
+import JSDOMEnvironment from 'jest-environment-jsdom';
 import TaskList from '../modules/class-task-list.js';
 
 // Testing Add Item Todo
+
+
 
 describe('Testing Add Item', () => {
   test('Adding todo to array not to be null', () => {
@@ -37,7 +40,7 @@ describe('Testing Add Item', () => {
   });
 });
 
-// Testing Remove Item Todo
+//Testing Remove Item Todo
 
 describe('Testing Remove Item', () => {
   it('Removing todo from array to be null', () => {
@@ -67,4 +70,44 @@ describe('Testing Remove Item', () => {
     todo.removeTask(4);
     expect(todo.data[4].description).toEqual('Lunch');
   });
+});
+
+ // Testing editind Task
+
+describe('Testing Editing Item', () => {
+  it('Editing todo from array', () => {
+    const todo = new TaskList();
+    todo.addTask('Task', false, 1);
+    todo.renameTask(1, 'Task Edited')
+    expect(todo.data[0].description).toEqual('Task Edited');
+  });
+  
+});
+ // Testing Updating Task
+
+describe('Testing Uptate status of Item', () => {
+  it('Uptate status ', () => {
+    const todo = new TaskList();
+    todo.addTask('Task1', false, 1);
+    todo.addTask('Task2', false, 2);
+    todo.updateStatus(2, true)
+    expect(todo.data[1].completed).toEqual(true);
+  });
+  
+});
+
+describe('Testing clear completed Items', () => {
+  it('clear completed ', () => {
+    const todo = new TaskList();
+    todo.addTask('Task1', false, 1);
+    todo.updateStatus(2, true)
+    todo.updateStatus(3, true)
+    todo.updateStatus(7, true)
+    todo.updateStatus(9, true)
+    todo.updateStatus(8, true)
+    todo.clearCompleted()
+    console.log(todo.data);
+    expect(todo.data.length).toEqual(4);
+  });
+  
 });
