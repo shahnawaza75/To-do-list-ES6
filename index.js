@@ -13,7 +13,6 @@ const mainContainer = document.querySelector('.list-container');
 // HTML skeleton
 // Header (Title and input)
 mainContainer.innerHTML = `<div class="row">
-<h1>Today's To Do</h1>
 <i class="fa-solid fa-rotate fa-lg font-awesome-icon"></i>
 </div>`;
 const inputContainer = addElem('form', [], mainContainer);
