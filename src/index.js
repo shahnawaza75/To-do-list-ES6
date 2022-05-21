@@ -1,9 +1,9 @@
 // Imports
 import './style.css';
-import addElem from './src/modules/add-elem.js';
-import refreshList from './src/modules/refresh-list.js';
+import addElem from './modules/add-elem.js';
+import refreshList from './modules/refresh-list.js';
 
-const TaskList = require('./src/modules/class-task-list.js');
+const TaskList = require('./modules/class-task-list.js');
 
 const taskList = new TaskList();
 
