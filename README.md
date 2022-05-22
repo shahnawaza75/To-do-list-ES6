@@ -8,6 +8,7 @@
 - CSS
 - JS
 - webpack
+- Jest library
 
 ## Live Demo
 
@@ -38,6 +39,13 @@ Open index.html in Chrome
 - GitHub: [@shahnawaza75](https://github.com/shahnawaza75)
 - Twitter: [@shahnawaza75](https://twitter.com/shahnawaza75)
 - LinkedIn: [@shahnawaza75](https://www.linkedin.com/in/shahnawaz-ali-a24b72204)
+
+## Author 2
+
+👤 **Ezeoke Stanley Ifeanyi**
+
+- GitHub: [@stanleeeeee](https://github.com/stanleeeeee)
+- Twitter: [@Stanmega89](https://twitter.com/Stanmega89)
 
 ## 🤝 Contributing
 

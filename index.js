@@ -1,8 +1,9 @@
 // Imports
 import './style.css';
-import addElem from './modules/add-elem.js';
-import TaskList from './modules/class-task-list.js';
-import refreshList from './modules/refresh-list.js';
+import addElem from './src/modules/add-elem.js';
+import refreshList from './src/modules/refresh-list.js';
+
+import TaskList from './src/modules/class-task-list.js';
 
 const taskList = new TaskList();
 
@@ -11,7 +12,9 @@ const mainContainer = document.querySelector('.list-container');
 
 // HTML skeleton
 // Header (Title and input)
-
+mainContainer.innerHTML = `<div class="row">
+<i class="fa-solid fa-rotate fa-lg font-awesome-icon"></i>
+</div>`;
 const inputContainer = addElem('form', [], mainContainer);
 const inputText = addElem('input', ['input-add-task'], inputContainer);
 inputText.setAttribute('placeholder', 'Add to your list...');
